@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: inventarioTienda
 -- ------------------------------------------------------
--- Server version	5.5.16-log
+-- Server version	5.5.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -19,8 +19,6 @@
 -- Current Database: `inventarioTienda`
 --
 
-/*!40000 DROP DATABASE IF EXISTS `inventarioTienda`*/;
-
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ `inventarioTienda` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `inventarioTienda`;
@@ -34,7 +32,7 @@ DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `administrador` (
   `usuario` varchar(20) NOT NULL,
-  `caontrasenia` varchar(20) NOT NULL
+  `contrasenia` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -58,7 +56,8 @@ DROP TABLE IF EXISTS `productos`;
 CREATE TABLE `productos` (
   `id` varchar(20) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `cantidad` int(3) NOT NULL,
+  `cantidad` varchar(5) NOT NULL,
+  `precio` varchar(5) NOT NULL,
   `descripcion` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -69,6 +68,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
+INSERT INTO `productos` VALUES ('87654323','coca cola','5','8','the coca cola compani'),('7854354232','barritas Marinella','5','7','barras de fresa');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-06-12 17:44:45
+-- Dump completed on 2013-06-14  6:56:58
